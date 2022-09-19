@@ -1,4 +1,4 @@
-class DoctorsController < ApplicationController
+class Api::V1::DoctorsController < ApplicationController
     before_action :get_doctor, except: %i[create index]
 
     def index
@@ -41,6 +41,5 @@ class DoctorsController < ApplicationController
         @doctor = Doctor.find(id: params[:id])
         rescue ActiveRecord::RecordNotFound
             render json: { errors: 'Doctor not found' }, status: :not_found
-        end
     end
 end
