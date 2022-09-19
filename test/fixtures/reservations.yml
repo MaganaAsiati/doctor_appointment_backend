@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_reserved: 2022-09-19
+  city: MyString
+  duration: 1
+  user: one
+  doctor: one
+
+two:
+  date_reserved: 2022-09-19
+  city: MyString
+  duration: 1
+  user: two
+  doctor: two
