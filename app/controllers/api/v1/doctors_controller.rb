@@ -1,5 +1,5 @@
 class Api::V1::DoctorsController < ApplicationController
-  before_action :get_doctor, except: %i[create index]
+  before_action :found_doctor, except: %i[create index]
 
   def index
     doctors = Doctor.all
@@ -21,14 +21,16 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def update
-    unless @doctor.update(user_params)
+    if @doctor.update(doctor_params)
+      render json: 'Doctor update successfully'
+    else
       render json: { errors: @doctor.errors.full_messages },
              status: :unprocessable_entity
     end
   end
 
   def destroy
-    @doctor.destroy
+    render json: "#{@doctor.name} deleted sucessfully" if @doctor.destroy
   end
 
   private
@@ -37,8 +39,8 @@ class Api::V1::DoctorsController < ApplicationController
     params.permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
   end
 
-  def get_doctor
-    @doctor = Doctor.find(id: params[:id])
+  def found_doctor
+    @doctor = Doctor.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { errors: 'Doctor not found' }, status: :not_found
   end
