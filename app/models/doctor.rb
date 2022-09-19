@@ -5,7 +5,7 @@ class Doctor < ApplicationRecord
     validates :image, presence: true
     validates :reserved, presence: true
     validates :bill, presence: true
-    validates :email, presence: true
+    validates :email, presence: true, uniqueness: true
     validates :location, presence: true, length: {in: 2..100, message: 'Location\'s length should be in range of 2 to 100'}
     validates :description, presence: true, numericality: true
 end
