@@ -32,7 +32,9 @@ class ApplicationController < ActionController::API
   end
 
   # check if user is logged in
-  def logged_in?
-    !!current_user
+  def logged_in
+    unless !!current_user
+      render json: { error: 'You are not logged in' }
+    end
   end
 end
