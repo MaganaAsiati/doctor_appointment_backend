@@ -75,6 +75,7 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.4.0)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.10)
@@ -192,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.13)
   bootsnap
+  cancancan
   debug
   pg (~> 1.1)
   puma (~> 5.0)
