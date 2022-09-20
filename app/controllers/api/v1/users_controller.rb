@@ -15,16 +15,13 @@ class Api::V1::UsersController < ApplicationController
 
   # POST /users
   def create
-    user = User.new(user_params)
+    @user = User.new(user_params)
 
-    if user.save
-      token = issue_token(user)
-      render json: { user: UserSerializer.new(user), jwt: token}
-
-    elsif user.errors.messages
-      render json: { errors: user.errors.messages }
+    if @user.save
+      token = issue_token(@user)
+      render json: { user: UserSerializer.new(@user), jwt: token }, status: :created
     else
-      render json: { error: 'User could not be created.' }
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
