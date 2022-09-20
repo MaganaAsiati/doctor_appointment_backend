@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
-  def login
-    user = User.find_by_email(params[:email])
-
-    if user&.authenticate(params[:password])
-      token = issue_token(user)
-      render json: { user: UserSerializer.new(user), jwt: token }
+  def create
+    @user = User.find_by(email: params[:email])
+    if @user&.authenticate(params[:password])
+      token = issue_token(@user)
+      render json: { user: UserSerializer.new(@user), jwt: token }
     else
-      render json: { error: 'Incorrect username or password.' }
+      render json: { error: 'Invalid username or password' }, status: 401
     end
   end
 
@@ -14,13 +13,7 @@ class SessionsController < ApplicationController
     if logged_in?
       render json: current_user
     else
-      render json: { error: 'User is not logged in/could not be found.' }
+        render json: { error: 'User is not logged in/could not be found.' } # rubocop:disable Layout/IndentationWidth
     end
-  end
-
-  private
-
-  def session_params
-    params.require(:session).permit(:email, :password)
   end
 end
