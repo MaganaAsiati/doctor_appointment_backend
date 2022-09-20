@@ -20,7 +20,7 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.save
       render json: @reservation, status: :created, location: @reservation
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.update(reservation_params)
       render json: @reservation, status: :ok
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -43,6 +43,8 @@ class Api::V1::ReservationsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_reservation
     @reservation = Reservation.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { errors: 'Reservation not found' }, status: :not_found
   end
 
   # Only allow a list of trusted parameters through.
