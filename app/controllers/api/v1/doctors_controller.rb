@@ -1,17 +1,27 @@
 class Api::V1::DoctorsController < ApplicationController
+  before_action :admin, except: %i[index show]
   before_action :found_doctor, except: %i[create index]
 
   def index
-    doctors = Doctor.all
-    render json: doctors, status: :ok
+    if logged_in?
+      doctors = Doctor.all
+      render json: doctors, status: :ok
+    else
+      render json: { error: 'You are not logged in' }
+    end
   end
 
   def show
-    render json: @doctor, status: :ok
+    if logged_in?
+      render json: @doctor, status: :ok
+    else
+      render json: { error: 'You are not logged in' }
+    end
   end
 
   def create
-    doctor = Doctor.new(doctor_params)
+    user = current_user
+    doctor = user.doctors.new(doctor_params)
     if doctor.save
       render json: doctor, status: :ok
     else
@@ -34,6 +44,15 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   private
+
+  def admin
+    user ||= User.find_by(id: user_id)
+    if user.role == 'admin'
+      current_user
+    else
+      render json: { error: 'You are not authorized to perform this action' }
+    end
+  end
 
   def doctor_params
     params.permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
