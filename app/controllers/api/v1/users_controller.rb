@@ -5,12 +5,12 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users, status: :ok
   end
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, status: :ok
   end
 
   # POST /users
@@ -36,7 +36,7 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    render json: "#{@user.name} deleted successfully" if @user.destroy
   end
 
   private
@@ -44,6 +44,8 @@ class Api::V1::UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { errors: 'User not found' }, status: :not_found
   end
 
   # Only allow a list of trusted parameters through.
