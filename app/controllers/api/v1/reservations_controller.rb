@@ -3,14 +3,21 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
-
-    render json: @reservations
+    if logged_in?
+      @reservations = Reservation.all
+      render json: @reservations
+    else
+      render json: { error: 'You are not logged in' }
+    end
   end
 
   # GET /reservations/1
   def show
-    render json: @reservation
+    if logged_in?
+      render json: @reservation
+    else
+      render json: { error: 'You are not logged in' }
+    end
   end
 
   # POST /reservations

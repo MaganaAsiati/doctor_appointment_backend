@@ -1,6 +1,8 @@
 class Api::V1::DoctorsController < ApplicationController
+  before_action :logged_in, only: %i[index show]
   before_action :found_doctor, except: %i[create index]
-  before_action :user_ability, except: %i[create index show]
+  before_action :user_ability, except: %i[index show]
+  # load_and_authorize_resource
 
   def index
     doctors = Doctor.all
@@ -12,10 +14,9 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
-    doctor = Doctor.new(doctor_params)
-    authorize! :manage, doctor
-  rescue CanCan::AccessDenied
-    render json: { errors: 'Permission denied' }
+    @doctor = current_user.doctors.new(doctor_params)
+    # authorize! :manage, doctor
+
     if doctor.save
       render json: doctor, status: :ok
     else
@@ -40,7 +41,7 @@ class Api::V1::DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
+    params.require(:doctor).permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
   end
 
   def found_doctor
@@ -52,6 +53,6 @@ class Api::V1::DoctorsController < ApplicationController
   def user_ability
     authorize! :manage, @doctor
   rescue CanCan::AccessDenied
-    render json: { errors: 'Permission denied' }
+    render json: { errors: 'You are not authorized to perform this action' }
   end
 end
