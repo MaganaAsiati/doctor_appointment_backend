@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get "login/", to: "sessions#login"
+  post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
   # Defines the root path route ("/")
   # root "articles#index"
