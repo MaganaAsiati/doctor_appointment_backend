@@ -52,6 +52,6 @@ class Api::V1::DoctorsController < ApplicationController
     authorize! :manage, @doctor
   rescue CanCan::AccessDenied
     render json: { errors: 'You are not authorized to perform this action' },
-              status: :unauthorized
+           status: :unauthorized
   end
 end
