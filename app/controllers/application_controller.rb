@@ -28,6 +28,7 @@ class ApplicationController < ActionController::API
   # get user from the token
   def current_user
     user ||= User.find_by(id: user_id)
+    user
   end
 
   # check if user is logged in

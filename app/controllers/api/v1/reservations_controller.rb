@@ -10,7 +10,7 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { error: 'You are not logged in' }
     end
   end
-  
+
   # GET /reservations/1
   def show
     if logged_in?
