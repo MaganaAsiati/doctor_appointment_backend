@@ -1,5 +1,7 @@
 class Api::V1::DoctorsController < ApplicationController
   before_action :found_doctor, except: %i[create index]
+  before_action :user_ability, except: %i[create index show]
+  load_and_authorize_resource, only: %i[create index show]
 
   def index
     doctors = Doctor.all
@@ -43,5 +45,11 @@ class Api::V1::DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { errors: 'Doctor not found' }, status: :not_found
+  end
+
+  def user_ability
+    authorize! :manage, @doctor
+  rescue CanCan::AccessDenied
+    render json: { errors: 'Permission denied' }
   end
 end
