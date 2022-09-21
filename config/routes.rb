@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       resources :doctors 
     end
   end
+
+  post "/login", to: "sessions#create"
+  get "/authorized", to: "sessions#show"
   # Defines the root path route ("/")
   # root "articles#index"
 end
