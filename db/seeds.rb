@@ -34,3 +34,5 @@ robert = Doctor.create(
 )
 
 # reservation
+user.reservation.create(data_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: john)
+admin.reservation.create(data_reserved: '22-11-2022', city: 'Accra', duration: 2, doctor: robert)
