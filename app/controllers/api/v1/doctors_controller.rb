@@ -33,7 +33,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    render json: "#{@doctor.name} deleted successfully" if @doctor.destroy
+    render json: "#{@doctor.name} deleted successfully", status: :ok if @doctor.destroy
   end
 
   private
