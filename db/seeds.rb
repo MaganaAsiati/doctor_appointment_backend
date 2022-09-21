@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
-User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
+user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
+admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
 
 # doctors
-Doctor.create(
+john = Doctor.create(
     name: 'John abou',
     speciality: 'Neurology', 
     image: 'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=2000',
@@ -22,7 +22,7 @@ Doctor.create(
     location: 'Cotonou'
 )
 
-Doctor.create(
+robert = Doctor.create(
     name: 'Robert Yonou',
     speciality: 'Neurology', 
     image: 'https://media.istockphoto.com/photos/happy-healthcare-practitioner-picture-id138205019?k=20&m=138205019&s=612x612&w=0&h=KpsSMVsplkOqTnAJmOye4y6DcciVYIBe5dYDgYXLVW4=',
@@ -32,3 +32,5 @@ Doctor.create(
     email: 'robertyonou@gmail.com',
     location: 'New York'
 )
+
+# reservation
