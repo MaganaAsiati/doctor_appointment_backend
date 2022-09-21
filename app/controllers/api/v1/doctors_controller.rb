@@ -1,38 +1,31 @@
 class Api::V1::DoctorsController < ApplicationController
-  before_action :admin, except: %i[index show]
+  before_action :logged_in, only: %i[index show]
   before_action :found_doctor, except: %i[create index]
+  before_action :user_ability, except: %i[index show]
 
   def index
-    if logged_in?
-      doctors = Doctor.all
-      render json: doctors, status: :ok
-    else
-      render json: { error: 'You are not logged in' }
-    end
+    doctors = Doctor.all
+    render json: doctors, status: :ok
   end
 
   def show
-    if logged_in?
-      render json: @doctor, status: :ok
-    else
-      render json: { error: 'You are not logged in' }
-    end
+    render json: @doctor, status: :ok
   end
 
   def create
-    user = current_user
-    doctor = user.doctors.new(doctor_params)
-    if doctor.save
-      render json: doctor, status: :ok
+    @doctor = current_user.doctors.new(doctor_params)
+
+    if @doctor.save
+      render json: @doctor, status: :ok
     else
-      render json: { errors: doctor.errors.full_messages },
+      render json: { errors: @doctor.errors.full_messages },
              status: :unprocessable_entity
     end
   end
 
   def update
     if @doctor.update(doctor_params)
-      render json: 'Doctor update successfully'
+      render json: 'Doctor update successfully', status: :ok
     else
       render json: { errors: @doctor.errors.full_messages },
              status: :unprocessable_entity
@@ -40,27 +33,25 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    render json: "#{@doctor.name} deleted sucessfully" if @doctor.destroy
+    render json: "#{@doctor.name} deleted successfully", status: :ok if @doctor.destroy
   end
 
   private
 
-  def admin
-    user ||= User.find_by(id: user_id)
-    if user.role == 'admin'
-      current_user
-    else
-      render json: { error: 'You are not authorized to perform this action' }
-    end
-  end
-
   def doctor_params
-    params.permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
+    params.require(:doctor).permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
   end
 
   def found_doctor
     @doctor = Doctor.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { errors: 'Doctor not found' }, status: :not_found
+  end
+
+  def user_ability
+    authorize! :manage, @doctor
+  rescue CanCan::AccessDenied
+    render json: { errors: 'You are not authorized to perform this action' },
+           status: :unauthorized
   end
 end

@@ -27,12 +27,11 @@ class ApplicationController < ActionController::API
 
   # get user from the token
   def current_user
-    user ||= User.find_by(id: user_id)
-    user
+    User.find_by(id: user_id)
   end
 
   # check if user is logged in
-  def logged_in?
-    !!current_user
+  def logged_in
+    render json: { error: 'You are not logged in' }, status: :ok unless !!current_user
   end
 end
