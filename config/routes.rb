@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
+  root "homes#index"
   # Defines the root path route ("/")
   # root "articles#index"
+  get '*other', to: redirect('/')
 end
