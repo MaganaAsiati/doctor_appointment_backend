@@ -14,7 +14,7 @@ admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456',
 Christina  = admin.doctors.create(
     name: 'Christina Milian',
     speciality: 'Neurology', 
-    image: 'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=2000',    
+    image: 'https://user-images.githubusercontent.com/95297251/192105518-81e2d20a-4990-470a-98a2-eb57c4242d07.png',    
     reserved: true,
     description: 'some description about this Christina Milian',
     bill: 100,
@@ -25,7 +25,7 @@ Christina  = admin.doctors.create(
 Devi  = admin.doctors.create(
     name: 'Devi Shetty',
     speciality: 'surgery', 
-    image: 'https://drive.google.com/file/d/1WqgoLJlMh6TovG1dmrdDhHm7ELCSnHKC/view?usp=sharing',
+    image: 'https://user-images.githubusercontent.com/95297251/192105960-8fef4506-06b1-4ec9-8bd4-5bfdcfeead12.png',
     reserved: true,
     description: 'Who is Devi Shetty, I don\'t know now',
     bill: 100,
@@ -36,7 +36,7 @@ Devi  = admin.doctors.create(
 Christelle = admin.doctors.create(
     name: 'Christelle Santini',
     speciality: 'surgery', 
-    image: 'https://drive.google.com/file/d/1FS2W0WAasHi6J7Vufvp4DAeqlNJeuxix/view?usp=sharing',
+    image: 'https://user-images.githubusercontent.com/95297251/192105806-4401e519-4c2a-4a51-aa5b-c0ce92eb0653.png',
     reserved: false,
     description: 'Eric is a gastroenterologist in some hospital',
     bill: 100,
@@ -47,7 +47,7 @@ Christelle = admin.doctors.create(
 Mariam = admin.doctors.create(
     name: 'Mariam Makeba',
     speciality: 'pediatrician', 
-    image: 'https://drive.google.com/file/d/1vdfXoG4E39u4Ac-ZrnlhBobK-c2a39Eu/view?usp=sharing',
+    image: 'https://user-images.githubusercontent.com/95297251/192105914-b22c7317-5a0c-4416-ab65-5e559e906cd3.png',
     reserved: false,
     description: 'Mandala one of the greatest african leader',
     bill: 100,
