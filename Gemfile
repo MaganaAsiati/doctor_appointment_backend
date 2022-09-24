@@ -9,7 +9,8 @@ gem 'cancancan'
 gem 'jwt', '~> 2.5'
 gem 'rails', '~> 7.0.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
-
+gem 'rswag-api'
+gem 'rswag-ui'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
@@ -43,6 +44,8 @@ gem 'rack-cors'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do
