@@ -11,44 +11,44 @@ user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
 admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
 
 # doctors
-john = admin.doctors.create(
-    name: 'John abou',
+Christina  = admin.doctors.create(
+    name: 'Christina Milian',
     speciality: 'Neurology', 
-    image: 'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=2000',
+    image: 'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=2000',    
     reserved: true,
-    description: 'some description about this John abou',
+    description: 'some description about this Christina Milian',
     bill: 100,
     email: 'johnabou@gmail.com',
     location: 'Cotonou'
 )
 
-robert = admin.doctors.create(
-    name: 'Robert Yonou',
-    speciality: 'Pediatrics', 
-    image: 'https://media.istockphoto.com/photos/happy-healthcare-practitioner-picture-id138205019?k=20&m=138205019&s=612x612&w=0&h=KpsSMVsplkOqTnAJmOye4y6DcciVYIBe5dYDgYXLVW4=',
+Devi  = admin.doctors.create(
+    name: 'Devi Shetty',
+    speciality: 'surgery', 
+    image: 'https://drive.google.com/file/d/1WqgoLJlMh6TovG1dmrdDhHm7ELCSnHKC/view?usp=sharing',
     reserved: true,
-    description: 'Who is Robert yonou, I don\'t know now',
+    description: 'Who is Devi Shetty, I don\'t know now',
     bill: 100,
     email: 'robertyonou@gmail.com',
     location: 'New York'
 )
 
-eric = admin.doctors.create(
-    name: 'Eric Toyota',
-    speciality: 'Gastroenterology', 
-    image: 'https://www.liveabout.com/thmb/Mqg14bq1UVVrFdrasruRbTC-m0M=/650x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/doctor-with-stethoscope-in-hospital-642394515-5aa9a0b8a9d4f90037431454.jpg',
-    reserved: true,
+Christelle = admin.doctors.create(
+    name: 'Christelle Santini',
+    speciality: 'surgery', 
+    image: 'https://drive.google.com/file/d/1FS2W0WAasHi6J7Vufvp4DAeqlNJeuxix/view?usp=sharing',
+    reserved: false,
     description: 'Eric is a gastroenterologist in some hospital',
     bill: 100,
     email: 'eric@gmail.com',
     location: 'New York'
 )
 
-mandela = admin.doctors.create(
-    name: 'Mandela',
-    speciality: 'cardiology', 
-    image: 'https://familydoctor.org/wp-content/uploads/2018/02/41808433_l-705x470.jpg',
-    reserved: true,
+Mariam = admin.doctors.create(
+    name: 'Mariam Makeba',
+    speciality: 'pediatrician', 
+    image: 'https://drive.google.com/file/d/1vdfXoG4E39u4Ac-ZrnlhBobK-c2a39Eu/view?usp=sharing',
+    reserved: false,
     description: 'Mandala one of the greatest african leader',
     bill: 100,
     email: 'mandela@gmail.com',
@@ -56,5 +56,6 @@ mandela = admin.doctors.create(
 )
 
 # reservation
-user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: john)
-admin.reservations.create(date_reserved: '22-11-2022', city: 'Accra', duration: 2, doctor: robert)
+user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: Christina)
+admin.reservations.create(date_reserved: '22-11-2022', city: 'India', duration: 2, doctor: Devi)
+
