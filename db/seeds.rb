@@ -8,7 +8,7 @@
 
 # users
 user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
-admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
+admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456')
 
 # doctors
 Christina  = admin.doctors.create(
