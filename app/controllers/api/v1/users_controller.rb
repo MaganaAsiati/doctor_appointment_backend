@@ -30,12 +30,10 @@ class Api::V1::UsersController < ApplicationController
   def update
     if current_user.admin?
       render json: @user if @user.update(params.permit(:role))
+    elsif @user.update(user_params)
+      render json: @user, status: :ok
     else
-      if @user.update(user_params)
-        render json: @user, status: :ok
-      else
-        render json: { error: 'You are not authorized to perform this action' }, status: :unprocessable_entity
-      end
+      render json: { error: 'You are not authorized to perform this action' }, status: :unprocessable_entity
     end
   end
 
