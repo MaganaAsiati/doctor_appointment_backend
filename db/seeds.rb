@@ -8,14 +8,13 @@
 
 # users
 user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
-admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
+admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456')
 
 # doctors
 Christina  = admin.doctors.create(
     name: 'Christina Milian',
     speciality: 'Neurology', 
-    image: 'https://user-images.githubusercontent.com/95297251/192105518-81e2d20a-4990-470a-98a2-eb57c4242d07.png',    
-    reserved: true,
+    image: 'https://user-images.githubusercontent.com/95297251/192105518-81e2d20a-4990-470a-98a2-eb57c4242d07.png',
     description: 'some description about this Christina Milian',
     bill: 100,
     email: 'johnabou@gmail.com',
@@ -26,7 +25,6 @@ Devi  = admin.doctors.create(
     name: 'Devi Shetty',
     speciality: 'surgery', 
     image: 'https://user-images.githubusercontent.com/95297251/192105960-8fef4506-06b1-4ec9-8bd4-5bfdcfeead12.png',
-    reserved: true,
     description: 'Who is Devi Shetty, I don\'t know now',
     bill: 100,
     email: 'robertyonou@gmail.com',
@@ -37,7 +35,6 @@ Christelle = admin.doctors.create(
     name: 'Christelle Santini',
     speciality: 'surgery', 
     image: 'https://user-images.githubusercontent.com/95297251/192105806-4401e519-4c2a-4a51-aa5b-c0ce92eb0653.png',
-    reserved: false,
     description: 'Eric is a gastroenterologist in some hospital',
     bill: 100,
     email: 'eric@gmail.com',

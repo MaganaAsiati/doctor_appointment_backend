@@ -24,8 +24,8 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def update
-    if @doctor.update(doctor_params)
-      render json: 'Doctor update successfully', status: :ok
+    if @doctor.update(params[:doctor])
+      render json: { message: 'Doctor update successfully' }, status: :ok
     else
       render json: { errors: @doctor.errors.full_messages },
              status: :unprocessable_entity
@@ -33,7 +33,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    render json: "#{@doctor.name} deleted successfully", status: :ok if @doctor.destroy
+    render json: { message: "#{@doctor.name} deleted successfully" }, status: :ok if @doctor.destroy
   end
 
   private
