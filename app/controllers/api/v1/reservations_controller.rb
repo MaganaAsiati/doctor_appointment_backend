@@ -1,6 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :logged_in, only: %i[index show]
-  before_action :set_reservation, only: %i[show update destroy]
+  before_action :set_reservation, except: %i[create index]
+  before_action :user_ability, except: %i[index show]
 
   # GET /reservations
   def index
@@ -49,6 +50,12 @@ class Api::V1::ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require(:reservation).permit(:date_reserved, :city, :duration, :user_id, :doctor_id)
+    params.permit(:date_reserved, :city, :duration, :user_id, :doctor_id)
   end
+
+def user_ability
+  authorize! :manage, @reservation
+rescue CanCan::AccessDenied
+  render json: { errors: 'You are not authorized to perform this action' },
+         status: :unauthorized
 end
