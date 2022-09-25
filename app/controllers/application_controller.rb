@@ -32,6 +32,6 @@ class ApplicationController < ActionController::API
 
   # check if user is logged in
   def logged_in
-    render json: { error: 'You are not logged in' }, status: :ok unless !!current_user
+    render json: { error: 'You are not logged in' }, status: :forbidden unless !!current_user
   end
 end
