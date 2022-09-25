@@ -8,31 +8,51 @@
 
 # users
 user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
-admin = User.create(name: 'admin', email: 'admin@gamil.com', password: '123456', role: 'admin')
+admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456')
 
 # doctors
-john = Doctor.create(
-    name: 'John abou',
+Christina  = admin.doctors.create(
+    name: 'Christina Milian',
     speciality: 'Neurology', 
-    image: 'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=2000',
-    reserved: true,
-    description: 'some description about this John abou',
+    image: 'https://user-images.githubusercontent.com/95297251/192105518-81e2d20a-4990-470a-98a2-eb57c4242d07.png',
+    description: 'some description about this Christina Milian',
     bill: 100,
-    email: 'johnabou@gmail.com',
+    email: 'christina@gmail.com',
     location: 'Cotonou'
 )
 
-robert = Doctor.create(
-    name: 'Robert Yonou',
-    speciality: 'Neurology', 
-    image: 'https://media.istockphoto.com/photos/happy-healthcare-practitioner-picture-id138205019?k=20&m=138205019&s=612x612&w=0&h=KpsSMVsplkOqTnAJmOye4y6DcciVYIBe5dYDgYXLVW4=',
-    reserved: true,
-    description: 'Who is Robert yonou, I don\'t know now',
+Devi  = admin.doctors.create(
+    name: 'Devi Shetty',
+    speciality: 'surgery', 
+    image: 'https://user-images.githubusercontent.com/95297251/192105960-8fef4506-06b1-4ec9-8bd4-5bfdcfeead12.png',
+    description: 'Who is Devi Shetty, I don\'t know now',
     bill: 100,
-    email: 'robertyonou@gmail.com',
+    email: 'devi@gmail.com',
+    location: 'New York'
+)
+
+Christelle = admin.doctors.create(
+    name: 'Christelle Santini',
+    speciality: 'surgery', 
+    image: 'https://user-images.githubusercontent.com/95297251/192105806-4401e519-4c2a-4a51-aa5b-c0ce92eb0653.png',
+    reserved: false,
+    description: 'christelle is a gastroenterologist in some hospital',
+    bill: 100,
+    email: 'christelle@gmail.com',
+    location: 'New York'
+)
+
+Mariam = admin.doctors.create(
+    name: 'Mariam Makeba',
+    speciality: 'pediatrician', 
+    image: 'https://user-images.githubusercontent.com/95297251/192105914-b22c7317-5a0c-4416-ab65-5e559e906cd3.png',
+    reserved: false,
+    description: 'Mariam Makeba one of the greatest african leader',
+    bill: 100,
+    email: 'mariam@gmail.com',
     location: 'New York'
 )
 
 # reservation
-user.reservation.create(data_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: john)
-admin.reservation.create(data_reserved: '22-11-2022', city: 'Accra', duration: 2, doctor: robert)
+user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: Christina)
+admin.reservations.create(date_reserved: '22-11-2022', city: 'India', duration: 2, doctor: Devi)
