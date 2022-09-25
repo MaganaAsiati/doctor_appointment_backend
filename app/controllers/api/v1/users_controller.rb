@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  before_action :logged_in, only: %i[update]
   before_action :set_user, only: %i[show update destroy]
 
   # GET /users
@@ -27,10 +28,12 @@ class Api::V1::UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
-      render json: @user
+    if current_user.admin?
+      render json: @user if @user.update(params.permit(:role))
+    elsif @user.update(user_params)
+      render json: @user, status: :ok
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { error: 'You are not authorized to perform this action' }, status: :unprocessable_entity
     end
   end
 
