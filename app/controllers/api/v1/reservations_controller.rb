@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :logged_in, only: %i[index show]
   before_action :set_reservation, except: %i[create index]
-  before_action :user_ability, except: %i[index show]
+  before_action :user_ability, except: %i[update destroy]
 
   # GET /reservations
   def index
