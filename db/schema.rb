@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_20_132141) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_25_013945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_132141) do
     t.string "name", limit: 50
     t.string "speciality", limit: 100
     t.string "image"
-    t.boolean "reserved"
+    t.boolean "reserved", default: false
     t.text "description"
     t.decimal "bill"
     t.string "email"

@@ -10,6 +10,7 @@
 user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456' )
 admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456', role: 'admin')
 
+
 # doctors
 Christina  = admin.doctors.create(
     name: 'Christina Milian',
@@ -53,4 +54,6 @@ Mariam = admin.doctors.create(
 
 # reservation
 user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: Christina)
+
 admin.reservations.create(date_reserved: '22-11-2022', city: 'India', duration: 2, doctor: Devi)
+
