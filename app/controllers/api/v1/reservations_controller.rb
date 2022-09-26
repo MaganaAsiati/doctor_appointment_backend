@@ -53,9 +53,10 @@ class Api::V1::ReservationsController < ApplicationController
     params.permit(:date_reserved, :city, :duration, :user_id, :doctor_id)
   end
 
-def user_ability
-  authorize! :manage, @reservation
-rescue CanCan::AccessDenied
-  render json: { errors: 'You are not authorized to perform this action' },
-         status: :unauthorized
+  def user_ability
+    authorize! :manage, @reservation
+  rescue CanCan::AccessDenied
+    render json: { errors: 'You are not authorized to perform this action' },
+           status: :unauthorized
+  end
 end
