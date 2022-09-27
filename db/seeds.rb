@@ -53,7 +53,7 @@ Mariam = admin.doctors.create(
 )
 
 # reservation
-user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: Christina)
+user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', doctor: Christina)
 
-admin.reservations.create(date_reserved: '22-11-2022', city: 'India', duration: 2, doctor: Devi)
+admin.reservations.create(date_reserved: '22-11-2022', city: 'kigali', doctor: Devi)
 
