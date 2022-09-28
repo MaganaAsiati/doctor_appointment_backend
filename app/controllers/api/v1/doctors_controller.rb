@@ -39,7 +39,7 @@ class Api::V1::DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.permit(:name, :speciality, :image, :reserved, :description, :bill, :email, :location)
+    params.permit(:name, :speciality, :image, :description, :bill, :email, :location)
   end
 
   def found_doctor
