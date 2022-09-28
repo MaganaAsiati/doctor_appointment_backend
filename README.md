@@ -15,3 +15,8 @@ Check out the [API documentation]()
 
 - [x] Here is the deployed app in [Heroku]()👈
 
+## GitHub Project
+Check out the [Kanban](https://github.com/users/MaganaAsiati/projects/6) of our whole project.
+
+
+
