@@ -54,3 +54,28 @@ To install rails, in the terminal kindly run this command
 $ gem install rails
 ```
 
+### Setup
+
+Clone the repository using the GitHub link provided below.
+
+## installation
+
+To get a local copy up and running follow these simple example steps.
+
+- clone the repository by running: https://github.com/MaganaAsiati/doctor_appointment_backend.git
+
+- setup rails app
+``` rails . my_api --api --database=postgresql```
+- navigate to the folder
+  ``` cd <DIRECTORY> ```
+- Install packages
+  ``` npm i ```
+- Run the app
+```sh
+# Load the schema
+rails db:schema:load
+# Create the database
+rake db:create
+# Run database Migration
+rails db:migrate
+```
