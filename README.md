@@ -133,4 +133,6 @@ Give a ⭐️ if you like this project!
 
 The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) requires that you give appropriate credit to the author. Therefore, you must do it in the README of your project.
 
+## 📝 License
 
+This project is [MIT](./MIT.md) licensed.
