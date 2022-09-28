@@ -6,7 +6,7 @@ class Reservation < ApplicationRecord
   after_destroy :update_reserved
 
   def update_reserved
-    if doctor.reservations.is_empty?
+    if doctor.reservations.empty?
       doctor.update(reserved: false) if doctor.reserved
     else
       doctor.update(reserved: true) unless doctor.reserved
