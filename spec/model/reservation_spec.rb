@@ -27,11 +27,11 @@ RSpec.describe Reservation, type: :model do
   end
   it 'date_reserved should not be nil' do
     @reservation.date_reserved = nil
-    expect(@reservation).to be_valid
+    expect(@reservation).to_not be_valid
   end
   it 'city should not be nil' do
     @reservation.city = nil
-    expect(@reservation).to be_valid
+    expect(@reservation).to_not be_valid
   end
   it 'duration should not be nil' do
     @reservation.update_reserved
