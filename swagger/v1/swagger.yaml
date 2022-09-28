@@ -1,4 +1,4 @@
----
+
 openapi: 3.0.1
 info:
   description: "Final Capstone Project is based on an app to book an appointment with a doctor."
@@ -16,15 +16,19 @@ tags:
 paths:
   "/api/v1/doctors":
     get:
+      tags:
+      - Doctors
       summary: list doctors
       responses:
-        '403':
+        '200':
           description: successful
     post:
+      tags:
+      - Doctors
       summary: create doctor
       parameters: []
       responses:
-        '401':
+        '200':
           description: successful
       requestBody:
         content:
@@ -58,87 +62,39 @@ paths:
     parameters:
     - name: id
       in: path
+      description: id
       required: true
       schema:
         type: string
     get:
+      tags:
+      - Doctors
       summary: show doctor
       responses:
-        '403':
+        '200':
           description: successful
     patch:
+      tags:
+      - Doctors
       summary: update doctor
-      parameters: []
       responses:
-        '401':
+        '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                speciality:
-                  type: string
-                image:
-                  type: string
-                description:
-                  type: string
-                bill:
-                  type: integer
-                email:
-                  type: string
-                location:
-                  type: string
-              required:
-              - name
-              - speciality
-              - image
-              - description
-              - bill
-              - email
-              - location
     put:
+      tags:
+      - Doctors
       summary: update doctor
-      parameters: []
       responses:
-        '401':
+        '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                speciality:
-                  type: string
-                image:
-                  type: string
-                description:
-                  type: string
-                bill:
-                  type: integer
-                email:
-                  type: string
-                location:
-                  type: string
-              required:
-              - name
-              - speciality
-              - image
-              - description
-              - bill
-              - email
-              - location
     delete:
+      tags:
+      - Doctors
       summary: delete doctor
       responses:
-        '401':
+        '200':
           description: successful
+
   "/api/v1/users/{user_id}/reservations":
     parameters:
     - name: user_id
@@ -148,35 +104,19 @@ paths:
       schema:
         type: string
     get:
+      tags:
+      - Reservation
       summary: list reservations
       responses:
-        '403':
+        '200':
           description: successful
     post:
+      tags:
+      - Reservation
       summary: create reservation
-      parameters: []
       responses:
-        '401':
+        '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                date_reserved:
-                  type: date
-                city:
-                  type: string
-                user_id:
-                  type: integer
-                doctor_id:
-                  type: integer
-              required:
-              - date_reserved
-              - city
-              - user_id
-              - doctor_id
   "/api/v1/users/{user_id}/reservations/{id}":
     parameters:
     - name: user_id
@@ -184,101 +124,56 @@ paths:
       description: user_id
       required: true
       schema:
-        type: integer
+        type: string
     - name: id
       in: path
       description: id
       required: true
       schema:
-        type: integer
+        type: string
     get:
+      tags:
+      - Reservation
       summary: show reservation
       responses:
-        '403':
+        '200':
           description: successful
     patch:
+      tags:
+      - Reservation
       summary: update reservation
-      parameters: []
       responses:
         '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                date_reserved:
-                  type: date
-                city:
-                  type: string
-                user_id:
-                  type: integer
-                doctor_id:
-                  type: integer
-              required:
-              - date_reserved
-              - city
-              - user_id
-              - doctor_id
     put:
+      tags:
+      - Reservation
       summary: update reservation
-      parameters: []
       responses:
         '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                date_reserved:
-                  type: date
-                city:
-                  type: string
-                user_id:
-                  type: integer
-                doctor_id:
-                  type: integer
-              required:
-              - date_reserved
-              - city
-              - user_id
-              - doctor_id
     delete:
+      tags:
+      - Reservation
       summary: delete reservation
       responses:
         '200':
           description: successful
   "/api/v1/users":
     get:
+      tags:
+      - Users
       summary: list users
       responses:
         '200':
           description: successful
     post:
+      tags:
+      - Users
       summary: create user
-      parameters: []
       responses:
-        '422':
+        '200':
           description: successful
-      requestBody:
-        content:
-          appication/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                email:
-                  type: string
-                password:
-                  type: string
-              required:
-              - name
-              - email
-              - password
   "/api/v1/users/{id}":
     parameters:
     - name: id
@@ -288,16 +183,29 @@ paths:
       schema:
         type: string
     get:
+      tags:
+      - Users
       summary: show user
       responses:
         '200':
           description: successful
-    put:
+    patch:
+      tags:
+      - Users
       summary: update user
       responses:
-        '403':
+        '200':
+          description: successful
+    put:
+      tags:
+      - Users
+      summary: update user
+      responses:
+        '200':
           description: successful
     delete:
+      tags:
+      - Users
       summary: delete user
       responses:
         '200':

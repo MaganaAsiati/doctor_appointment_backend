@@ -38,7 +38,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
         end
 
         let(:reservation) do
-          Reservation.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor_id: doctor)
+          Reservation.create(date_reserved: '22-10-2022', city: 'Lome', doctor_id: doctor)
         end
 
         after do |example|
@@ -72,7 +72,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
         end
 
         let(:id) do
-          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor_id: doctor).id
+          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', doctor_id: doctor).id
         end
 
         after do |example|
@@ -107,7 +107,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
                                bill: 100, email: 'johnabou@gmail.com', location: 'Cotonou')
         end
         let(:reservation) do
-          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor_id: doctor.id)
+          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', doctor_id: doctor.id)
         end
         let(:id) { reservation.id }
 
@@ -141,7 +141,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
                                bill: 100, email: 'johnabou@gmail.com', location: 'Cotonou')
         end
         let(:reservation) do
-          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor_id: doctor.id)
+          admin.reservations.create(date_reserved: '22-10-2022', city: 'Lome', doctor_id: doctor.id)
         end
         let(:id) { reservation.id }
 
