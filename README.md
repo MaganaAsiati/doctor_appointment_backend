@@ -115,3 +115,9 @@ $ rspec ./spec/#{filename}_spec.rb
 - GitHub: [@jmoseka](https://github.com/jmoseka)
 - Twitter: [@milamoseka](https://twitter.com/milamoseka)
 - LinkedIn: [Jamila Moseka](https://linkedin.com/in/jamila-moseka)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/MaganaAsiati/doctor_appointment_backend/issues).
+
