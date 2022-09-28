@@ -79,3 +79,20 @@ rake db:create
 # Run database Migration
 rails db:migrate
 ```
+### Usage
+
+Kindly modify the files as needed.
+
+### Run tests
+
+To install rspec, in the terminal kindly run this command
+
+```
+$ gem install rspec
+```
+
+To run tests, please run this command
+```
+$ rspec ./spec/#{filename}_spec.rb
+```
+
