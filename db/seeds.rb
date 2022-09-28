@@ -7,8 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456')
-admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456')
+user = User.create(name: 'User 1', email: 'user1@gmail.com', password: '123456' )
+admin = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456', role: 'admin')
+
 
 # doctors
 Christina  = admin.doctors.create(
@@ -45,7 +46,6 @@ Mariam = admin.doctors.create(
     name: 'Mariam Makeba',
     speciality: 'pediatrician', 
     image: 'https://user-images.githubusercontent.com/95297251/192105914-b22c7317-5a0c-4416-ab65-5e559e906cd3.png',
-    reserved: false,
     description: 'Mandala one of the greatest african leader',
     bill: 100,
     email: 'mandela@gmail.com',
@@ -53,6 +53,7 @@ Mariam = admin.doctors.create(
 )
 
 # reservation
-user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', duration: 20, doctor: Christina)
-admin.reservations.create(date_reserved: '22-11-2022', city: 'India', duration: 2, doctor: Devi)
+user.reservations.create(date_reserved: '22-10-2022', city: 'Lome', doctor: Christina)
+
+admin.reservations.create(date_reserved: '22-11-2022', city: 'kigali', doctor: Devi)
 

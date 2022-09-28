@@ -50,7 +50,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.permit(:date_reserved, :city, :duration, :user_id, :doctor_id)
+    params.permit(:date_reserved, :city, :user_id, :doctor_id)
   end
 
   def user_ability
