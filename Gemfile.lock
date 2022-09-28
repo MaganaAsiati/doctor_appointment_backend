@@ -248,7 +248,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
-  rails (~> 7.0.4)
+  rails (~> 7.0.3, >= 7.0.3.1)
   rspec-rails
   rswag
   rubocop (>= 1.0, < 2.0)
