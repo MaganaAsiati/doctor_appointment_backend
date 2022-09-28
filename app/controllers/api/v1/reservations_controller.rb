@@ -36,7 +36,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # DELETE /reservations/1
   def destroy
-    render json: "#{@reservation.date_reserved} reservation deleted successfully" if @reservation.destroy
+    render json: { message: "#{@reservation.date_reserved} reservation deleted successfully" } if @reservation.destroy
   end
 
   private
