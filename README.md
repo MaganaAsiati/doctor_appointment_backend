@@ -96,3 +96,22 @@ To run tests, please run this command
 $ rspec ./spec/#{filename}_spec.rb
 ```
 
+## Author
+
+👤 **Magana Mwinja Asiati** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- GitHub: [@MaganaAsiati ](https://github.com/MaganaAsiati)
+- Twitter: [@asia_magana](https://twitter.com/asia_magana)
+- LinkedIn: [Asia Magana](https://www.linkedin.com/in/asia-magana-60b451200/)
+
+👤 **Eric Mahare** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- GitHub: [@erikmahare](https://github.com/ericmahare) 
+- Twitter: [@erikmahare](https://twitter.com/erikmahare) 
+- LinkedIn: [Eric Mahare](https://www.linkedin.com/in/eric-mahare-358944183/) 
+
+ 👤 **Jamila Moseka** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+ 
+- GitHub: [@jmoseka](https://github.com/jmoseka)
+- Twitter: [@milamoseka](https://twitter.com/milamoseka)
+- LinkedIn: [Jamila Moseka](https://linkedin.com/in/jamila-moseka)
