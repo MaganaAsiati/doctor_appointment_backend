@@ -9,6 +9,7 @@ body {
     background-image: linear-gradient(0deg, #5858587e 56%, #5858587e 56%), url('./onlinedoc.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
