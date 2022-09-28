@@ -10,7 +10,6 @@ class Reservation < ApplicationRecord
 
   def update_reserved
     if doctor.reservations.empty?
-
       doctor.update(reserved: false) if doctor.reserved
     else
       doctor.update(reserved: true) unless doctor.reserved

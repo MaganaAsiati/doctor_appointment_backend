@@ -39,7 +39,7 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    render json: "#{@user.name} deleted successfully" if @user.destroy
+    render json: { message: "#{@user.name} deleted successfully" } if @user.destroy
   end
 
   private

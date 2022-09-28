@@ -24,7 +24,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def update
-    if @doctor.update(params[:doctor])
+    if @doctor.update(doctor_params)
       render json: { message: 'Doctor update successfully' }, status: :ok
     else
       render json: { errors: @doctor.errors.full_messages },
