@@ -20,3 +20,10 @@ Check out the [Kanban](https://github.com/users/MaganaAsiati/projects/6) of our 
 
 
 
+## Built With 🛠️
+
+- [x] Programming Language: [Ruby](https://www.ruby-lang.org/en/)
+- [x] Framework: [Ruby on Rails](https://rubyonrails.org/)
+- [x] Linter: [Rubocop](https://rubocop.org/)
+- [x] Code Editor: [VS Code](https://code.visualstudio.com/)
+
