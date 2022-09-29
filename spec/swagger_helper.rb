@@ -22,7 +22,7 @@ RSpec.configure do |config|
       paths: {},
       servers: [
         {
-          url: 'http://{defaultHost}',
+          url: 'https://{defaultHost}',
           variables: {
             defaultHost: {
               default: 'hidden-citadel-49495.herokuapp.com/'

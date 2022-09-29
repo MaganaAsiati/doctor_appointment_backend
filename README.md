@@ -9,19 +9,35 @@
 
 
 ## API Documentation
-Check out the [API documentation]()
+Check out the [API documentation](https://hidden-citadel-49495.herokuapp.com/api-docs/index.html)
 
 ## Project Documentation 📄
 
-- [x] Here is the deployed app in [Heroku]()👈
+- [x] Here is the deployed app in [Heroku](https://hidden-citadel-49495.herokuapp.com/)👈
 
 ## GitHub Project
+
+### Kanban board
+
 Check out the [Kanban](https://github.com/users/MaganaAsiati/projects/6) of our whole project.
-## Screenshot  of the kanban board
+
+#### Screenshot  of the kanban board at the starting point 
 
 ![image](https://user-images.githubusercontent.com/95297251/190628162-9c3baadb-4883-47ff-9f91-f56be1fb6965.png)
 
+#### Screenshot  of the kanban board at the end 
 
+![image](https://user-images.githubusercontent.com/95297251/193005808-acdf84e2-6bc0-4b81-ab28-bdd4ddb46d37.png)
+
+### Views 
+
+#### Front_end 
+
+![all-devices-black (7)](https://user-images.githubusercontent.com/95297251/193011566-ec2ffa84-7b1e-458f-8c46-8cf7eba574df.png)
+
+#### Back_end
+
+![all-devices-white (3)](https://user-images.githubusercontent.com/95297251/193010139-c3abd6dd-6ee5-4ddd-b9b7-16395d5a0c0f.png)
 
 ## Built With 🛠️
 
@@ -129,7 +145,7 @@ Give a ⭐️ if you like this project!
 
 - [Microverse](https://www.microverse.org/)
 - Code Reviewers
-- Original design idea by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+- Original design idea by [muratk](https://www.behance.net/muratk)
 
 The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) requires that you give appropriate credit to the author. Therefore, you must do it in the README of your project.
 
