@@ -1,0 +1,217 @@
+
+openapi: 3.0.1
+info:
+  description: "Final Capstone Project is based on an app to book an appointment with a doctor."
+  title: Doctor Appointment API V1
+  version: v1
+  termsOfService: https://github.com/MaganaAsiati/doctor_appointment_backend/
+  contact:
+tags:
+- name: Doctors
+  description: Requests about doctors
+- name: Reservation
+  description: Requests about reservations
+- name: Users
+  description: Requests about reservations
+paths:
+  "/api/v1/doctors":
+    get:
+      tags:
+      - Doctors
+      summary: list doctors
+      responses:
+        '200':
+          description: successful
+    post:
+      tags:
+      - Doctors
+      summary: create doctor
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                speciality:
+                  type: string
+                image:
+                  type: string
+                description:
+                  type: string
+                bill:
+                  type: integer
+                email:
+                  type: string
+                location:
+                  type: string
+              required:
+              - name
+              - speciality
+              - image
+              - description
+              - bill
+              - email
+              - location
+  "/api/v1/doctors/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Doctors
+      summary: show doctor
+      responses:
+        '200':
+          description: successful
+    patch:
+      tags:
+      - Doctors
+      summary: update doctor
+      responses:
+        '200':
+          description: successful
+    put:
+      tags:
+      - Doctors
+      summary: update doctor
+      responses:
+        '200':
+          description: successful
+    delete:
+      tags:
+      - Doctors
+      summary: delete doctor
+      responses:
+        '200':
+          description: successful
+
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Reservation
+      summary: list reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      tags:
+      - Reservation
+      summary: create reservation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Reservation
+      summary: show reservation
+      responses:
+        '200':
+          description: successful
+    patch:
+      tags:
+      - Reservation
+      summary: update reservation
+      responses:
+        '200':
+          description: successful
+    put:
+      tags:
+      - Reservation
+      summary: update reservation
+      responses:
+        '200':
+          description: successful
+    delete:
+      tags:
+      - Reservation
+      summary: delete reservation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      tags:
+      - Users
+      summary: list users
+      responses:
+        '200':
+          description: successful
+    post:
+      tags:
+      - Users
+      summary: create user
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Users
+      summary: show user
+      responses:
+        '200':
+          description: successful
+    patch:
+      tags:
+      - Users
+      summary: update user
+      responses:
+        '200':
+          description: successful
+    put:
+      tags:
+      - Users
+      summary: update user
+      responses:
+        '200':
+          description: successful
+    delete:
+      tags:
+      - Users
+      summary: delete user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: hidden-citadel-49495.herokuapp.com/
