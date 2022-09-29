@@ -115,6 +115,12 @@ $ rspec ./spec/#{filename}_spec.rb
 
 ## Author
 
+👤 **Matchoudi** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- GitHub: [@LionRouge1](https://github.com/LionRouge1)
+- Twitter: [@Matchoudi1](https://twitter.com/Matchoudi1)
+- LinkedIn: [matchoudi](https://linkedin.com/in/matchoudi)
+
 👤 **Magana Mwinja Asiati** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
 - GitHub: [@MaganaAsiati ](https://github.com/MaganaAsiati)
