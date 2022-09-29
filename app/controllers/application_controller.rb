@@ -1,6 +1,9 @@
+require 'dotenv/load' 
+
 class ApplicationController < ActionController::API
   def jwt_key
-    Rails.application.secrets.secret_key_base
+    # Rails.application.secrets.secret_key_base
+    ENV['JWT_KEY']
   end
 
   # hide user data
