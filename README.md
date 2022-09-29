@@ -13,7 +13,8 @@ Check out the [API documentation](https://hidden-citadel-49495.herokuapp.com/api
 
 ## Project Documentation 📄
 
-- [x] Here is the deployed app in [Heroku](https://hidden-citadel-49495.herokuapp.com/)👈
+- [x] Here is the deployed of back end [Heroku](https://hidden-citadel-49495.herokuapp.com/)👈
+- [x] Here is the deployed of front end [Netlify](https://doctor-appointment-frontend.netlify.app/)👈
 
 ## GitHub Project
 
