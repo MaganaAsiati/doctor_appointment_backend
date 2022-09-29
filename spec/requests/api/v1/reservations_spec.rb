@@ -21,7 +21,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
   path '/api/v1/users/{user_id}/reservations' do
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
     post('create reservation') do
-      response(401, 'successful') do
+      response(422, 'successful') do
         consumes 'appication/json'
         parameter name: :reservation, in: :body, schema: {
           type: :object,
