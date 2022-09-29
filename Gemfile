@@ -7,7 +7,7 @@ ruby '3.1.2'
 gem 'active_model_serializers', '~> 0.10.13'
 gem 'cancancan'
 gem 'jwt', '~> 2.5'
-gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+gem 'rails', '~> 7.0.4'
 gem 'rswag'
 gem 'rubocop', '>= 1.0', '< 2.0'
 # Use postgresql as the database for Active Record
