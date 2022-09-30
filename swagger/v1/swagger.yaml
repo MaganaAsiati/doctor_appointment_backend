@@ -124,3 +124,16 @@ paths:
               - bill
               - email
               - location
+    delete:
+      summary: delete doctor
+      responses:
+        '401':
+          description: successful
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
