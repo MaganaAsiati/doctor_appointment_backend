@@ -142,3 +142,158 @@ paths:
       responses:
         '403':
           description: successful
+    post:
+      summary: create reservation
+      parameters: []
+      responses:
+        '422':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                date_reserved:
+                  type: date
+                city:
+                  type: string
+                user_id:
+                  type: integer
+                doctor_id:
+                  type: integer
+              required:
+              - date_reserved
+              - city
+              - user_id
+              - doctor_id
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: integer
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: integer
+    get:
+      summary: show reservation
+      responses:
+        '403':
+          description: successful
+    patch:
+      summary: update reservation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                date_reserved:
+                  type: date
+                city:
+                  type: string
+                user_id:
+                  type: integer
+                doctor_id:
+                  type: integer
+              required:
+              - date_reserved
+              - city
+              - user_id
+              - doctor_id
+    put:
+      summary: update reservation
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                date_reserved:
+                  type: date
+                city:
+                  type: string
+                user_id:
+                  type: integer
+                doctor_id:
+                  type: integer
+              required:
+              - date_reserved
+              - city
+              - user_id
+              - doctor_id
+    delete:
+      summary: delete reservation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      summary: list users
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '422':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+  "/api/v1/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show user
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update user
+      responses:
+        '403':
+          description: successful
+    delete:
+      summary: delete user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: hidden-citadel-49495.herokuapp.com/
