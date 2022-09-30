@@ -56,4 +56,37 @@ paths:
       responses:
         '403':
           description: successful
- 
+    patch:
+      summary: update doctor
+      parameters: []
+      responses:
+        '401':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                speciality:
+                  type: string
+                image:
+                  type: string
+                description:
+                  type: string
+                bill:
+                  type: integer
+                email:
+                  type: string
+                location:
+                  type: string
+              required:
+              - name
+              - speciality
+              - image
+              - description
+              - bill
+              - email
+              - location
