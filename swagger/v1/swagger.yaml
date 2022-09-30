@@ -137,3 +137,8 @@ paths:
       required: true
       schema:
         type: string
+    get:
+      summary: list reservations
+      responses:
+        '403':
+          description: successful
