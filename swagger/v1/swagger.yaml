@@ -44,3 +44,16 @@ paths:
               - bill
               - email
               - location
+  "/api/v1/doctors/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show doctor
+      responses:
+        '403':
+          description: successful
+ 
