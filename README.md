@@ -30,6 +30,11 @@ Check out the [Kanban](https://github.com/users/MaganaAsiati/projects/6) of our 
 
 ![image](https://user-images.githubusercontent.com/95297251/193005808-acdf84e2-6bc0-4b81-ab28-bdd4ddb46d37.png)
 
+#### ERD diagram
+
+![image](https://user-images.githubusercontent.com/95297251/193224946-efd91669-be61-48e2-ae06-f759873a817b.png)
+
+
 ### Views 
 
 #### Front_end 
